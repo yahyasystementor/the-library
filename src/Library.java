@@ -25,4 +25,12 @@ public class Library {
         }
         return null;
     }
+
+
+    public void printAll() {
+        for (int i = 0; i < count; i++) {
+            System.out.println(books[i].getTitle());
+        }
+    }
+
 }
