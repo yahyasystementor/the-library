@@ -1,4 +1,4 @@
-package polymorfism.demointerface;
+package demointerface;
 
 public class Music implements Playable {
 

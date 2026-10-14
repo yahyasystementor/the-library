@@ -1,6 +1,6 @@
 package polymorfism;
 
-public abstract class  Media {
+public  class  Media {
 
     protected String title;
 
@@ -8,7 +8,10 @@ public abstract class  Media {
         this.title = title;
     }
 
-    public abstract int loanDays();
+    public int loanDays() {
+        return 7;
+    }
+
     public void printInfo(){
         System.out.println(title);
     }

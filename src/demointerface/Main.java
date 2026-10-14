@@ -1,4 +1,4 @@
-package polymorfism.demointerface;
+package demointerface;
 
 import polymorfism.Media;
 
