@@ -3,7 +3,7 @@ package polymorfism;
 
 
 // at the moment its implementing two interfaces, use with causation
-public class Book extends Media implements Borrowable, Test {
+public class Book extends Media implements Borrowable {
 
     private int pages;
     private boolean borrowed;

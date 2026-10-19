@@ -1,6 +1,6 @@
 package polymorfism;
 
-public class Movie extends Media {
+public class Movie extends Media  {
 
     private int runtime;
 
