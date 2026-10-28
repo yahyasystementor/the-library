@@ -17,6 +17,14 @@ public class UserService {
         return users.get(email);
     }
 
+    /**
+     * TODO
+     * WRITE TESTS FOR THE METHODS BELOW
+     * CLEAN UP THE TESTS WITH BEFOREEACH AND AFTEREACH
+     */
+
+
+
     public boolean updateUser(String email, String newName){
         User user = users.get(email);
 
