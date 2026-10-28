@@ -1,8 +1,7 @@
 package main.battlearena;
 
 public class Character {
-    private String title;
-
+    public String title;
 
     public Character(String title) {
         this.title = title;
