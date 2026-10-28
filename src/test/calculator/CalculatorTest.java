@@ -1,5 +1,5 @@
 package test.calculator;
-import main.unittests.Calculator;
+import main.unittests.calculator.Calculator;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;

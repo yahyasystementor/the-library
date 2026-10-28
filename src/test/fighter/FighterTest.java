@@ -1,6 +1,6 @@
 package test.fighter;
 
-import main.unittests.Fighter;
+import main.unittests.fighter.Fighter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

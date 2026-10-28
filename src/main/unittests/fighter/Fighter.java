@@ -1,4 +1,4 @@
-package main.unittests;
+package main.unittests.fighter;
 
 import java.util.Random;
 

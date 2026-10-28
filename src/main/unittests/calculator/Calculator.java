@@ -1,4 +1,4 @@
-package main.unittests;
+package main.unittests.calculator;
 
 public class Calculator {
 

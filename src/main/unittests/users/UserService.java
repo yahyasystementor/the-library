@@ -1,4 +1,4 @@
-package main.unittests;
+package main.unittests.users;
 
 import java.util.HashMap;
 
