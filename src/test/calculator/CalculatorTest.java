@@ -1,9 +1,6 @@
-package test;
+package test.calculator;
 import main.unittests.Calculator;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.params.ParameterizedTest;
-
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 public class CalculatorTest {

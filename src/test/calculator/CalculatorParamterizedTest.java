@@ -1,4 +1,4 @@
-package test;
+package test.calculator;
 
 import main.unittests.Calculator;
 import org.junit.jupiter.params.ParameterizedTest;
