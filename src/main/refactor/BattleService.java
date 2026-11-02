@@ -2,38 +2,40 @@ package main.refactor;
 
 public class BattleService {
 
+    // Can be moved to an enum
+    private static final int ATTACK_DAMAGE = 10;
+    private static final int HEAL_AMOUNT = 10;
+    public static final int MIN_HP = 0;
 
     public void attack(Fighter attacker, Fighter defender){
-        int damage = 10;
-        int newHp = defender.getHp() - damage;
+        int damage = ATTACK_DAMAGE;
+        defender.takeDamage(damage);
+        printAttackResults(attacker,defender, damage);
 
-        if (newHp < 0) {
-            newHp = 0;
-        }
-
-        defender.setHp(newHp);
-        System.out.println(attacker.getName() + " attacked " + defender.getName());
-        System.out.println("Damage: " + damage);
-        System.out.println(attacker.getName() + " Hp: " + attacker.getHp());
-        System.out.println(defender.getName() + " Hp: " + defender.getHp());
-
-        if (defender.getHp() == 0) {
+        if (defender.getHp() == MIN_HP) {
             System.out.println(defender.getName() + "  Has been defeated");
         }
 
     }
 
     public void heal(Fighter fighter){
-        int healAmount = 10;
-        int newHp = fighter.getHp() + healAmount;
+        int healAmount = HEAL_AMOUNT;
+        fighter.heal(healAmount);
+        printHealResults(fighter, healAmount);
 
-        if (newHp > 100){
-            newHp = 100;
-        }
-        fighter.setHp(newHp);
+    }
+
+    private void printHealResults(Fighter fighter, int healAmount) {
         System.out.println(fighter.getName() + " healed " + healAmount);
         System.out.println(fighter.getName() + " Hp: " + fighter.getHp());
+    }
 
+
+    private void printAttackResults(Fighter attacker, Fighter defender, int damage) {
+        System.out.println(attacker.getName() + " attacked " + defender.getName());
+        System.out.println("Damage: " + damage);
+        System.out.println(attacker.getName() + " Hp: " + attacker.getHp());
+        System.out.println(defender.getName() + " Hp: " + defender.getHp());
     }
 
 
