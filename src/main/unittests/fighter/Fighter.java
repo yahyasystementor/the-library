@@ -1,8 +1,13 @@
 package main.unittests.fighter;
 
 import java.util.Random;
+import java.util.logging.Logger;
 
 public class Fighter {
+
+
+    private final static Logger logger = Logger.getLogger(Fighter.class.getName());
+
 
     private int hp = 100;
     private Random random = new Random();
