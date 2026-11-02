@@ -26,7 +26,6 @@ public class BattleServiceTest {
     void attackShouldOnlyReduceHpBy10(){
         battleService.attack(player,enemy);
 
-
         assertEquals(90, enemy.getHp());
     }
 

@@ -2,6 +2,14 @@ package main.refactor;
 
 public class BattleService {
 
+
+    /**
+     * TODO
+     * Flytta ut final variablar till enum
+     * Refactor den här klassen (Där det behövs)
+     * Skriva tester för metoder i Fighter
+     */
+
     // Can be moved to an enum
     private static final int ATTACK_DAMAGE = 10;
     private static final int HEAL_AMOUNT = 10;
@@ -15,7 +23,6 @@ public class BattleService {
         if (defender.getHp() == MIN_HP) {
             System.out.println(defender.getName() + "  Has been defeated");
         }
-
     }
 
     public void heal(Fighter fighter){
