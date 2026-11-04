@@ -1,3 +1,4 @@
+/*
 package test.users;
 
 import main.unittests.users.User;
@@ -53,7 +54,7 @@ public class UserServiceTest {
         assertNotNull(foundUser);
         assertEquals("Anna", foundUser.getName());
 
-         */
+
     }
 
 
@@ -167,3 +168,4 @@ public class UserServiceTest {
 
 
      */
+

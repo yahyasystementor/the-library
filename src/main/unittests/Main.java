@@ -1,3 +1,4 @@
+/*
 package main.unittests;
 
 import main.unittests.users.User;
@@ -53,7 +54,7 @@ public class Main {
         logger.warning("Something went wrong");
         logger.severe("Something failed");
 
-         */
+
 
 
 
@@ -64,3 +65,5 @@ public class Main {
 
     }
 }
+
+ */

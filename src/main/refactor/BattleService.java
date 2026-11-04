@@ -15,6 +15,7 @@ public class BattleService {
     private static final int HEAL_AMOUNT = 10;
     public static final int MIN_HP = 0;
 
+
     public void attack(Fighter attacker, Fighter defender){
         int damage = ATTACK_DAMAGE;
         defender.takeDamage(damage);

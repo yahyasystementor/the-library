@@ -1,3 +1,5 @@
+
+/*
 package main.unittests.users;
 
 import java.util.HashMap;
@@ -62,3 +64,5 @@ public class UserService {
         return users;
     }
 }
+
+ */
