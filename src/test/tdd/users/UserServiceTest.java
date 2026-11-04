@@ -5,8 +5,7 @@ import main.tdd.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class UserServiceTest {
 
@@ -19,12 +18,40 @@ public class UserServiceTest {
      * Följ TDD
      * Skriv funktionalitet i UserService för metoderna
      * Refactor test
+     *
      */
 
     @BeforeEach
     void setUp(){
         userService = new UserService();
         user = new User("Yahya", "Yahya@gmail.com");
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @Test
+    void getUserShouldReturnTheCorrectUser(){
+        // Arrange
+        userService.addUser(user);
+
+        // Act
+        User foundUser = userService.getUserByEmail("Yahya@gmail.com");
+
+        // Assert Kontroll
+        assertNotNull(foundUser);
+        assertEquals("Yahya", foundUser.getName());
+
     }
 
     @Test

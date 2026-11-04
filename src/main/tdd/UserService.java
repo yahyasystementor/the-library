@@ -12,9 +12,6 @@ public class UserService {
         users.put(user.getEmail(), user);
     }
 
-    public int getUserCount(){
-        return users.size();
-    }
 
     public boolean deleteUser(String email){
         User removeUser = users.remove(email);
@@ -23,6 +20,14 @@ public class UserService {
             return false;
         }
         return true;
+    }
+
+    public User getUserByEmail(String email){
+        return users.get(email);
+    }
+
+    public int getUserCount(){
+        return users.size();
     }
 
 }
