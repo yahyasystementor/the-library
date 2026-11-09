@@ -1,39 +1,40 @@
 package main.threads;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) throws InterruptedException {
 
-        // sekvensiellt
+        Counter counter = new Counter();
 
-        long startSequence = System.currentTimeMillis();
+        ArrayList<Thread> threads = new ArrayList<>();
 
-        SlowTask task1 = new SlowTask("Task A");
-        SlowTask task2 = new SlowTask("Task B");
+        int numberOfThreads = 10;
 
-        task1.run();
-        task2.run();
-
-        long endSequence = System.currentTimeMillis();
-
-        System.out.println("Sekventiellt tid " + (endSequence - startSequence) + " ms");
+        int incrementPerThread = 100_000;
 
 
-        // Flera trådar
-        long startSeq = System.currentTimeMillis();
+        for (int i = 0; i < numberOfThreads; i++) {
+            CounterTask task = new CounterTask(counter, incrementPerThread);
+            Thread worker = new Thread(task, "Worker #" + i);
+            threads.add(worker);
+        }
 
-        Thread thread1 = new Thread(new SlowTask("Uppgift C"), "worker1");
-        Thread thread2 = new Thread(new SlowTask("Uppgift D"), "worker2");
+        for (Thread worker: threads){
+            worker.start();
+        }
 
-        thread1.start();
-        thread2.start();
+        for (Thread worker: threads){
+            worker.join();
+        }
 
-        thread1.join();
-        thread2.join();
+        int expected = numberOfThreads * incrementPerThread;
 
+        int actual = counter.getCount();
 
-        long endSeq = System.currentTimeMillis();
-
-        System.out.println("tid med trådar " + (endSeq - startSeq) + " ms");
+        System.out.println("Förväntat " + expected);
+        System.out.println("Faktisktat " + actual);
 
 
 
@@ -41,19 +42,6 @@ public class Main {
 
 
 
-
-
-        /*
-        Thread thread1 = new Thread(task1, "Worker-1");
-        Thread thread2 = new Thread(task2, "Worker-2");
-
-
-        thread1.start();
-        thread2.start();
-
-
-
-         */
 
 
     }
@@ -119,3 +107,50 @@ public class Main {
 
 
          */
+
+ /*
+
+        // sekvensiellt
+        long startSequence = System.currentTimeMillis();
+
+        SlowTask task1 = new SlowTask("Task A");
+        SlowTask task2 = new SlowTask("Task B");
+
+        task1.run();
+        task2.run();
+
+        long endSequence = System.currentTimeMillis();
+
+        System.out.println("Sekventiellt tid " + (endSequence - startSequence) + " ms");
+
+
+        // Flera trådar
+        long startSeq = System.currentTimeMillis();
+
+        Thread thread1 = new Thread(new SlowTask("Uppgift C"), "worker1");
+        Thread thread2 = new Thread(new SlowTask("Uppgift D"), "worker2");
+
+        thread1.start();
+        thread2.start();
+
+        thread1.join();
+        thread2.join();
+
+
+        long endSeq = System.currentTimeMillis();
+
+        System.out.println("tid med trådar " + (endSeq - startSeq) + " ms");
+
+
+
+
+
+
+
+
+
+
+
+
+         */
+
