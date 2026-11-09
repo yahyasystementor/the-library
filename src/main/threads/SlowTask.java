@@ -24,7 +24,6 @@ public class SlowTask implements Runnable{
 
                 throw new RuntimeException(e);
             }
-
         }
         System.out.println(taskName + " är färdig");
     }
