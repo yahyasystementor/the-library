@@ -1,22 +1,32 @@
 package main.threads;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
 
-        PrintTask task = new PrintTask("Uppgift A");
-        Thread worker = new Thread(task,"worker 1");
-
-        System.out.println("Main innan start");
-
-        worker.start();
-
-        System.out.println("Main efter start");
+        SlowTask task1 = new SlowTask("Läsa info");
+        SlowTask task2 = new SlowTask("Kontrollera resultat");
 
 
+        Thread thread1 = new Thread(task1, "Worker-1");
+        Thread thread2 = new Thread(task2, "Worker-2");
 
 
+        thread1.start();
+        thread2.start();
 
+        System.out.println("Main väntar på båda trådarna..");
+
+        try {
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+
+            Thread.currentThread().interrupt();
+            System.out.println(" Main blev avbruten");
+        }
+
+        System.out.println("Alla uppgifter är klara");
 
 
     }
@@ -31,6 +41,23 @@ public class Main {
             System.out.println("Main räknar " + i);
         }
         System.out.println("Main är färdig");
+
+
+
+
+
+        PrintTask task = new PrintTask("Uppgift A");
+        Thread worker = new Thread(task,"worker 1");
+
+        System.out.println("Main innan start");
+
+        worker.start();
+
+
+        System.out.println("Main efter start");
+
+
+
 
 
          */
