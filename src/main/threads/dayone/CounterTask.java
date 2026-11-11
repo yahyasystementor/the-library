@@ -1,6 +1,4 @@
-package main.threads;
-
-import java.util.Random;
+package main.threads.dayone;
 
 public class CounterTask implements Runnable {
 

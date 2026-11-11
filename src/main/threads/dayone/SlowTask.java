@@ -1,4 +1,4 @@
-package main.threads;
+package main.threads.dayone;
 
 public class SlowTask implements Runnable{
 
