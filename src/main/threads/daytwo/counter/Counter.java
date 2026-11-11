@@ -6,7 +6,6 @@ public class Counter implements Runnable{
 
     private final AtomicInteger count = new AtomicInteger(0);
 
-
     public void increment(){
         count.incrementAndGet();
     }
