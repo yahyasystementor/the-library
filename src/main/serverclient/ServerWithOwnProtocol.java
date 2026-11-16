@@ -30,8 +30,10 @@ public class ServerWithOwnProtocol {
                     String messaage;
 
                     while ((messaage = bufferedReader.readLine()) != null) {
+                        System.out.println("SERVER RECEIVED: " + messaage);
 
                         String response = protocol.reponse(messaage);
+                        System.out.println("SERVER RESPONSE: " + response);
 
                         printWriter.println(response);
 
