@@ -17,7 +17,6 @@ public class ClientHandler implements Runnable {
 
     @Override
     public void run(){
-
         PrintWriter out = null;
         BufferedReader in = null;
         String name = "Okänt";
@@ -31,13 +30,11 @@ public class ClientHandler implements Runnable {
             if (message == null || message.isBlank()){
                 return;
             }
-
             name = message.trim();
             clients.add(out);
             out.println("Välkommen " + name + " Skriv /quit för att lämna.");
             System.out.println(name + " anslöts. Online: " + clients.size());
             String userMessage;
-
             while((userMessage = in.lines().toString()) != null) {
                 if (userMessage.equalsIgnoreCase("/quit")) {
                     break;
@@ -48,7 +45,6 @@ public class ClientHandler implements Runnable {
                     reciever.println(name + ": " + userMessage);
                 }
             }
-
         } catch (IOException e) {
             System.out.println("Klient error: " + e.getMessage());
         } finally {
