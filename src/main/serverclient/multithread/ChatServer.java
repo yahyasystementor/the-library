@@ -16,6 +16,7 @@ public class ChatServer {
         ExecutorService pool = Executors.newFixedThreadPool(10);
 
         try (ServerSocket server = new ServerSocket(5000)){
+
             System.out.println("Chatten är igång på port 5000");
             while (true){
                 Socket socket = server.accept();
