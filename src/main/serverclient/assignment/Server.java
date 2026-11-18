@@ -40,6 +40,9 @@ public class Server {
                                 message
                         );
 
+
+
+
                         System.out.println("Sparade meddelandet " + message);
                         outputWriter.println("Sparat");
 
