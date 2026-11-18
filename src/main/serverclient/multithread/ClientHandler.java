@@ -17,12 +17,14 @@ public class ClientHandler implements Runnable {
 
     @Override
     public void run(){
+
         PrintWriter out = null;
-        BufferedReader in = null;
+
         String name = "Okänt";
         try(Socket client = socket) {
 
-            in = new BufferedReader(new InputStreamReader(client.getInputStream()));
+            BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));
+
             out = new PrintWriter(client.getOutputStream(), true);
 
             String message = in.readLine();
@@ -30,21 +32,30 @@ public class ClientHandler implements Runnable {
             if (message == null || message.isBlank()){
                 return;
             }
+
             name = message.trim();
+
             clients.add(out);
+
             out.println("Välkommen " + name + " Skriv /quit för att lämna.");
+
             System.out.println(name + " anslöts. Online: " + clients.size());
+
             String userMessage;
-            while((userMessage = in.lines().toString()) != null) {
+
+            while((userMessage = in.readLine()) != null) {
+
                 if (userMessage.equalsIgnoreCase("/quit")) {
                     break;
                 }
-            }
-            for (PrintWriter reciever : clients) {
-                synchronized (reciever) {
-                    reciever.println(name + ": " + userMessage);
+                for (PrintWriter reciever : clients) {
+                    synchronized (reciever) {
+                        reciever.println(name + ": " + userMessage);
+                    }
                 }
+                // DEBUGG CONTINUES FROM HERE
             }
+
         } catch (IOException e) {
             System.out.println("Klient error: " + e.getMessage());
         } finally {

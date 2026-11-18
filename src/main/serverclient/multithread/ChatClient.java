@@ -31,7 +31,6 @@ public class ChatClient implements Runnable {
 
     public static void main(String[] args) {
 
-
         try(Socket socket = new Socket("localhost", 5000)) {
             Scanner scanner = new Scanner(System.in);
 
