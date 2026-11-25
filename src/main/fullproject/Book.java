@@ -1,6 +1,6 @@
 package main.fullproject;
 
-public class Book extends Media {
+public class Book extends Medium {
 
     private String author;
     private int createdBooks;

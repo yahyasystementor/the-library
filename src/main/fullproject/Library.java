@@ -8,44 +8,44 @@ public class Library {
 
     private static final Logger log = Logger.getLogger(Library.class.getName());
 
-    private List<Book> books = new ArrayList<>();
-    private Map<String, Book> booksById = new HashMap<>();
+    private List<Medium> media = new ArrayList<>();
+    private Map<String, Medium> mediaById = new HashMap<>();
     private List<Loan> loanHistory = new ArrayList<>();
 
 
 
-    public boolean addMedia(Book book){
-        if (booksById.containsKey(book.getId())){
+    public boolean addMedium(Medium medium){
+        if (mediaById.containsKey(medium.getId())){
             return false;
         }
-        books.add(book);
-        booksById.put(book.getId(), book);
+        media.add(medium);
+        mediaById.put(medium.getId(), medium);
         return true;
     }
 
-    public Book getById(String id){
-        return booksById.get(id);
+    public Medium getById(String id){
+        return mediaById.get(id);
     }
 
-    public List<Book> getSortedMedia(){
-        List<Book> result = new ArrayList<>(books);
+    public List<Medium> getSortedMedia(){
+        List<Medium> result = new ArrayList<>(media);
         Collections.sort(result);
         return result;
     }
 
     public boolean borrow(String id, String borrower){
 
-        Book book = getById(id);
+        Medium medium = getById(id);
 
-        if (book == null){
+        if (medium == null){
             return false;
         }
 
-        if (!book.borrow()){
+        if (!medium.borrow()){
             return false;
         }
 
-         Loan loan = new Loan(book, borrower);
+         Loan loan = new Loan(medium, borrower);
          log.info(borrower + " borrowed loan " + loan);
          loanHistory.add(loan);
         return true;
@@ -54,15 +54,15 @@ public class Library {
 
     public boolean returnItem(String id){
 
-        Book book = getById(id);
+        Medium medium = getById(id);
 
-        if (book == null){
+        if (medium == null){
             return false;
         }
 
 
-        log.info("Återlämnad " + book.getTitle());
-        return book.returnItem();
+        log.info("Återlämnad " + medium.getTitle());
+        return medium.returnItem();
 
     }
 

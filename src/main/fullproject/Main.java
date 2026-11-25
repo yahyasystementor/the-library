@@ -1,24 +1,25 @@
 package main.fullproject;
 
-import static main.fullproject.Utility.showCatelog;
+import static main.fullproject.Utility.showCatalog;
 import static main.fullproject.Utility.showDialog;
 
 public class Main {
     public static void main(String[] args) {
         Library library = new Library();
 
-        library.addMedia(new Book("1","Pippi långstrump", "Astrid lindgren", 1945));
-        library.addMedia(new Book("2","Pippi långstrump", "Astrid lindgren", 1945));
-        library.addMedia(new Book("3","Sagan om ringen", "Tolkien", 1954));
-        library.addMedia(new Book("4","Emil i lönneberga", "Astrid lindgren", 1964));
-        library.addMedia(new Book("5","ABC", "Astrid lindgren", 1964));
+        library.addMedium(new Book("1","Pippi långstrump", "Astrid lindgren", 1945));
+        library.addMedium(new Book("2","Pippi långstrump", "Astrid lindgren", 1945));
+        library.addMedium(new Book("3","Sagan om ringen", "Tolkien", 1954));
+        library.addMedium(new Book("4","Emil i lönneberga", "Astrid lindgren", 1964));
+        library.addMedium(new Book("5","ABC", "Astrid lindgren", 1964));
+	library.addMedium(new Movie("6","Avatar", 2009, "James Cameron", 300));
 
 
         System.out.println("Våra böcker inna alla lån");
 
-        showCatelog(library);
+        showCatalog(library);
         showDialog(library);
-        showCatelog(library);
+        showCatalog(library);
 
     }
 }

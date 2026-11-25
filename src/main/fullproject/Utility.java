@@ -1,9 +1,9 @@
 package main.fullproject;
 
 public class Utility {
-    public static void showCatelog(Library library){
-        for (Media media: library.getSortedMedia()){
-            System.out.println(media);
+    public static void showCatalog(Library library){
+        for (Medium medium: library.getSortedMedia()){
+            System.out.println(medium);
         }
     }
 

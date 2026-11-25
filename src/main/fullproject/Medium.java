@@ -1,6 +1,6 @@
 package main.fullproject;
 
-public abstract class Media implements Borrowable, Comparable<Media> {
+public abstract class Medium implements Borrowable, Comparable<Medium> {
 
 
     private String id;
@@ -11,7 +11,7 @@ public abstract class Media implements Borrowable, Comparable<Media> {
     private Status status;
 
 
-    public Media(String id, String title, int year) {
+    public Medium(String id, String title, int year) {
         this.id = id;
         this.title = title;
         this.year = year;
@@ -69,7 +69,7 @@ public abstract class Media implements Borrowable, Comparable<Media> {
 
 
     @Override
-    public int compareTo(Media other){
+    public int compareTo(Medium other){
         return title.compareToIgnoreCase(other.title);
     }
 
