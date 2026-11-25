@@ -5,18 +5,27 @@ public class Book {
     // varje bok ska ha en unik ID
     private String id;
 
-
     private String title;
     private String author;
     private int year;
-    private boolean borrowed;
+    private Status status;
+
+    private int createdBooks;
+
+
+
 
     public Book(String id, String title, String author, int year) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.year = year;
-        this.borrowed = false;
+        this.status = Status.AVAILABLE;
+        createdBooks++;
+    }
+
+    public int getCreatedBooks() {
+        return createdBooks;
     }
 
     public String getId() {
@@ -32,19 +41,19 @@ public class Book {
     }
 
     public boolean isAvailabe(){
-        return !borrowed;
+        return status == Status.AVAILABLE;
     }
 
     public int getYear() {
         return year;
     }
 
-
     public boolean borrow(){
-        if (borrowed){
+        if (status != Status.AVAILABLE){
             return false;
         }
-        borrowed = true;
+
+        status = Status.BORROWED;
         return true;
     }
 
