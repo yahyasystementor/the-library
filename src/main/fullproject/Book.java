@@ -11,12 +11,12 @@ public class Book {
     private int year;
     private boolean borrowed;
 
-    public Book(String id, String title, String author, int year, boolean borrowed) {
+    public Book(String id, String title, String author, int year) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.year = year;
-        this.borrowed = borrowed;
+        this.borrowed = false;
     }
 
     public String getId() {
