@@ -57,5 +57,10 @@ public class Book {
         return true;
     }
 
+    @Override
+    public String toString(){
+        return id + " | " + title + " | " + author +" | " + status;
+    }
+
 
 }

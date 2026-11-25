@@ -10,10 +10,10 @@ public class Loan {
     private LocalDate dueDate;
 
 
-    public Loan(Book book, String borrower, LocalDate borrowDate) {
+    public Loan(Book book, String borrower) {
         this.book = book;
         this.borrower = borrower;
-        this.borrowDate = borrowDate;
+        this.borrowDate = LocalDate.now();
         this.dueDate = borrowDate.plusDays(28);
     }
 
