@@ -1,6 +1,7 @@
 package main.fullproject;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 public class Loan {
 

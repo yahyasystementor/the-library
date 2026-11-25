@@ -1,8 +1,9 @@
 package main.fullproject;
 
-public class Book {
+public class Book implements Comparable<Book> {
 
     // varje bok ska ha en unik ID
+
     private String id;
 
     private String title;
@@ -57,10 +58,25 @@ public class Book {
         return true;
     }
 
+    public boolean returnItem(){
+        if (status != Status.BORROWED){
+            return false;
+        }
+        status = Status.AVAILABLE;
+        return true;
+    }
+
+
+
+
     @Override
     public String toString(){
         return id + " | " + title + " | " + author +" | " + status;
     }
 
+    @Override
+    public int compareTo(Book other){
+        return getTitle().compareToIgnoreCase(other.getTitle());
+    }
 
 }

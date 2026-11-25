@@ -1,6 +1,7 @@
 package main.fullproject;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,7 +11,9 @@ public class Main {
             TODO
             1.Klasser DONE
             2.TDD DONE
-            3.ENUM+ objektsamverkan
+            3.ENUM
+            4.objektsamverkan
+            5.Collections
 
          */
 
@@ -22,6 +25,9 @@ public class Main {
 
         if (success){
             Loan loan = new Loan(book, "Yahya");
+
+
+
 
             System.out.println(loan);
         }
