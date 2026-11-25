@@ -11,10 +11,10 @@ public class LibraryServer {
 
         Library library = new Library();
 
-        library.addMedia(new Book("1","Pippi långstrump", "Astrid lindgren", 1945));
-        library.addMedia(new Book("2","Pippi långstrump", "Astrid lindgren", 1945));
-        library.addMedia(new Book("3","Sagan om ringen", "Tolkien", 1954));
-        library.addMedia(new Book("5","ABC", "Astrid lindgren", 1964));
+        library.addMedium(new Book("1","Pippi långstrump", "Astrid lindgren", 1945));
+        library.addMedium(new Book("2","Pippi långstrump", "Astrid lindgren", 1945));
+        library.addMedium(new Book("3","Sagan om ringen", "Tolkien", 1954));
+        library.addMedium(new Book("5","ABC", "Astrid lindgren", 1964));
 
 
         try(ServerSocket server = new ServerSocket(5000)){

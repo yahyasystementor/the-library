@@ -1,6 +1,6 @@
 package main.fullproject;
 
-public class Movie extends Media {
+public class Movie extends Medium {
 
     private String director;
     private int durationMinutes;

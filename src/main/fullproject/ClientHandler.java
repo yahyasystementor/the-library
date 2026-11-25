@@ -48,17 +48,17 @@ public class ClientHandler implements Runnable{
                 } else if (command.equals("LIST")) {
 
                     out.println("Katalog");
-                    for (Media media: library.getSortedMedia()){
-                        out.println(media);
+                    for (Medium medium: library.getSortedMedia()){
+                        out.println(medium);
                     }
                  out.println("END");
                 } else if(command.equals("STATUS")){
-                    Media media = library.getById(parts[1]);
-                    if (media == null){
+                    Medium medium = library.getById(parts[1]);
+                    if (medium == null){
                         out.println("ERROR Okänt ID");
 
                     } else {
-                        out.println("OK " + media);
+                        out.println("OK " + medium);
                     }
                 } else if(command.equals("BORROW")){
                     boolean success = library.borrow(parts[1], name);

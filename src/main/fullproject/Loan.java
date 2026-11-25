@@ -5,18 +5,18 @@ import java.util.UUID;
 
 public class Loan {
 
-    private Media media;
+    private Medium medium;
     private String borrower;
     private LocalDate borrowDate;
     private LocalDate dueDate;
 
 
-    public Loan(Media media, String borrower) {
-        this.media = media;
+    public Loan(Medium medium, String borrower) {
+        this.medium = medium;
         this.borrower = borrower;
         this.borrowDate = LocalDate.now();
 
-        this.dueDate = borrowDate.plusDays(media.loanDays());
+        this.dueDate = borrowDate.plusDays(medium.loanDays());
     }
 
 
@@ -38,7 +38,7 @@ public class Loan {
 
     @Override
     public String toString() {
-        return media.getTitle() + " lånades av "  + borrower + " åter senast " + dueDate;
+        return medium.getTitle() + " lånades av "  + borrower + " åter senast " + dueDate;
 
     }
 }
