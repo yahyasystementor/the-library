@@ -10,7 +10,7 @@ public class Library {
 
 
 
-    public boolean addBook(Book book){
+    public boolean addMedia(Book book){
         if (booksById.containsKey(book.getId())){
             return false;
         }
@@ -23,7 +23,7 @@ public class Library {
         return booksById.get(id);
     }
 
-    public List<Book> getSortedBooks(){
+    public List<Book> getSortedMedia(){
         List<Book> result = new ArrayList<>(books);
         Collections.sort(result);
         return result;

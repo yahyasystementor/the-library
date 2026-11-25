@@ -21,7 +21,7 @@ public class BookTest {
 
         // Assert
         assertTrue(success);
-        assertFalse(book.isAvailabe());
+        assertFalse(book.isAvailable());
 
     }
 
