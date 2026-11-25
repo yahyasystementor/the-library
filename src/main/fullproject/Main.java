@@ -1,5 +1,8 @@
 package main.fullproject;
 
+import static main.fullproject.Utility.showCatelog;
+import static main.fullproject.Utility.showDialog;
+
 public class Main {
     public static void main(String[] args) {
         Library library = new Library();
@@ -13,26 +16,10 @@ public class Main {
 
         System.out.println("Våra böcker inna alla lån");
 
-        for (Media media: library.getSortedMedia()){
-            System.out.println(media);
-        }
+        showCatelog(library);
+        showDialog(library);
+        showCatelog(library);
 
-        System.out.println("Lån lyckades " + library.borrow("1", "Yahya"));
-
-        System.out.println("Lån lyckades " + library.borrow("1", "Hadir"));
-
-        System.out.println("Lån lyckades " + library.borrow("2", "Emily"));
-
-
-
-        System.out.println("Alla lånetagare i vårt system " +library.getBorrowers());
-
-        System.out.println("Våra böcker efter alla lån");
-
-
-        for (Media media: library.getSortedMedia()){
-            System.out.println(media);
-        }
     }
 }
 

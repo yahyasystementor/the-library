@@ -1,8 +1,12 @@
 package main.fullproject;
 
 import java.util.*;
+import java.util.logging.Logger;
 
 public class Library {
+
+
+    private static final Logger log = Logger.getLogger(Library.class.getName());
 
     private List<Book> books = new ArrayList<>();
     private Map<String, Book> booksById = new HashMap<>();
@@ -42,6 +46,7 @@ public class Library {
         }
 
          Loan loan = new Loan(book, borrower);
+         log.info(borrower + " borrowed loan " + loan);
          loanHistory.add(loan);
         return true;
     }
@@ -55,6 +60,8 @@ public class Library {
             return false;
         }
 
+
+        log.info("Återlämnad " + book.getTitle());
         return book.returnItem();
 
     }
