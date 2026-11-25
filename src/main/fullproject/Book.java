@@ -38,4 +38,15 @@ public class Book {
     public int getYear() {
         return year;
     }
+
+
+    public boolean borrow(){
+        if (borrowed){
+            return false;
+        }
+        borrowed = true;
+        return true;
+    }
+
+
 }
